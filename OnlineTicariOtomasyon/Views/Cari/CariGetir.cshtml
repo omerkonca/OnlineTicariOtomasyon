@@ -1,0 +1,31 @@
+﻿@model MvcOnlineTicaretOtomasyonu.Models.siniflar.Cariler
+
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Cari Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(x => x.CariAd)
+    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.Cariid)
+    @Html.ValidationMessageFor(x => x.CariAd, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.CariSoyad)
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariSoyad, "", new { @style = "color:orange" })
+    <br />
+    @Html.LabelFor(x => x.CariSehir)
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariMail)
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+</div>
+}
+

@@ -1,0 +1,45 @@
+﻿@using MvcOnlineTicaretOtomasyonu.Models.siniflar
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.js"></script>
+
+
+<table id="tbl1" class="table table-success" style="background-color:#2f3138; color:white">
+
+    <tr>
+        <th>ID</th>
+        <th>Personel Adı</th>
+        <th>Soyadı</th>
+        <th>Görsel</th>
+        <th>Departman</th>
+        <th>Güncelle</th>
+        @*<th>Sil</th>*@
+        <th>Satışlar</th>
+    </tr>      
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Personelid</td>
+            <td>@k.PersonelAd</td>
+            <td>@k.PersonelSoyad</td>
+            <td> <a data-fancybox="gallery" style="background-color:red; color:white" target="_blank" class="btn btn-sm" href="@k.PersonelGorsel">Foto</a></td>
+            <td>@k.Departman.DepartmanAd</td>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css" />           
+            <td><a href="/Personel/PersonelGetir/@k.Personelid" class="btn btn-primary">Düzenle</a></td>
+            @*<td>@Html.ActionLink("Sil", "/Index", new { id = k.Personelid }, new { @class = "btn btn-danger", onclick = "return confirm('Do you want to delete?')" })</td>*@
+            <td><a href="/Departman/DepartmanPersonelSatış/@k.Personelid" class="btn btn-primary" style="background-color:darkslateblue">Detaylar</a></td>
+        
+
+        </tr>
+    }
+</table>
+<a href="/Personel/PersonelEkle" class="btn btn-info">Personel Ekle</a>
+
+
+@*<td><a href="/Personel/PersonelGetir/@k.Personelid" class="btn btn-warning">Güncelle</a></td>
+<td><a href="/Departman/DepartmanPersonelSatış/@k.Personelid" class="btn btn-info" style="background-color:Background">Detaylar</a></td>*@

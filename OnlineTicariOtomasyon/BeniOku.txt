@@ -1,0 +1,12 @@
+
+Program Kurulduktan Sonra, Düzgün Çalışabilmesi İçin Veritabanını Program Dosyası İçinde ki
+Veritabanı Adlı Dosyadan, Kurunuz:
+
+	•Kurulum --> Windows(C:) Klasörü İçerisine Yedek Adında Klasör Açıp, İçerisine .bak 
+	Uzantılı Dosyayı Yükleyiniz.
+
+	•Mssql Üzerinde Database Sağ Tıklayıp Restore Database Üzerinden Backup Klasörünü 
+	Yükleyiniz.
+
+3- Detaylı Bilgi Almak İçin omerkoncax1@gmail.com Adresine Mail Gönderebilirsiniz.
+https://instagram.com/omerkoncaa

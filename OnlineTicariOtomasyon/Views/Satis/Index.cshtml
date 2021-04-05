@@ -1,0 +1,69 @@
+﻿@using MvcOnlineTicaretOtomasyonu.Models.siniflar
+@model List<SatisHaraket>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<table id="tbl1" class="table table-bordered" style="margin-top:20px;">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ürün</th>
+            <th>Cari</th>
+            <th>Personel</th>
+            <th>Adet</th>
+            <th>Fiyat</th>
+            <th>Toplam</th>
+            <th>Tarih</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Satisid</td>
+            <td>@k.Urun.Urunid</td>
+            <td>@k.Cariler.CariAd @k.Cariler.CariSoyad</td>
+            <td>@k.Personel.PersonelAd @k.Personel.PersonelSoyad</td>
+            <td>@k.Adet</td>
+            <td>@k.Fiyat</td>
+            <td>@k.ToplamTutar</td>
+            <td>@k.Tarih</td>
+
+
+
+            <td><a href="/Satis/SatisGetir/@k.Satisid" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Satis/SatisDetay/@k.Satisid" class="btn btn-info" style="background-color:Background">Detaylar</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Satis/YeniSatis" class="btn btn-info">Yeni Satış Yap</a>
+
+
+@*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>
+
+
+
+
+
+
+

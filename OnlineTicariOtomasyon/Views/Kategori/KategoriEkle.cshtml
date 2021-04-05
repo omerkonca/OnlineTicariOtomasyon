@@ -1,0 +1,22 @@
+﻿@model MvcOnlineTicaretOtomasyonu.Models.siniflar.Kategori
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<br />
+<h2>Yeni Kategori Sayfası</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.KategoriAD)
+    @Html.TextBoxFor(x => x.KategoriAD, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" id="Btn1">Kaydet</button>
+    <script>
+        $('#Btn1').click(function () {
+            alert("Kategori Başarılı Bir Şekilde Eklendi")
+        });
+    </script>
+</form>
+
